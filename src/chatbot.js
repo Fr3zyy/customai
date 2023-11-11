@@ -5,6 +5,9 @@ class ChatBot {
     constructor(databasePath) {
         this.databasePath = databasePath;
         this.data = this.loadData();
+        setInterval(() => {
+            this.saveData();
+        }, 1000);
     }
 
     loadData() {
@@ -113,17 +116,17 @@ class ChatBot {
 
     updateData(input, newResponses) {
         input = input.toLowerCase();
-        this.loadData(); // Veritabanını yükle, eğer dosya yoksa oluşturur
+        this.loadData()
 
         const existingEntry = this.data.find((entry) => entry.input === input);
 
         if (existingEntry) {
             existingEntry.responses = newResponses;
-            this.saveData(); // Veritabanını güncelle
+            this.saveData();
             return true;
         }
 
-        return false; // Input verisi bulunamadı
+        return false;
     }
 
     queryData(input) {
@@ -131,7 +134,7 @@ class ChatBot {
 
         const matchingEntry = this.data.find((entry) => entry.input === input);
 
-        return matchingEntry !== undefined; // Eşleşme varsa true, yoksa false döner
+        return matchingEntry !== undefined;
     }
 
 }

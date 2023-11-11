@@ -1,0 +1,19 @@
+{
+    "name": "customai",
+    "version": "0.1.0",
+    "description": "Custom Chat Bot AI Trainer",
+    "main": "index.js",
+    "repository":"https://github.com/Fr3zyy/customai",
+
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.5.0",
+        "customai": "^0.0.2",
+        "string-similarity": "^4.0.4"
+    }
+}
